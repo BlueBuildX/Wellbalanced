@@ -62,12 +62,14 @@ class _CoursesPageState extends State<CoursesPage> {
           ),
         ),
         subtitle: Text("Price: ${course.price}"),
-        onTap: () {
-          Navigator.of(context).push(MaterialPageRoute(
+        onTap: () async {
+          await Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => CourseDetailPage(
               course: course,
             ),
           ));
+
+          setState(() {});
         },
       ),
     );

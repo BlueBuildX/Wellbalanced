@@ -19,18 +19,22 @@ class CourseDetailPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(course.name),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      body: ListView(
         children: [
-          _buildBanner(),
-          _buildMain(context),
-          _buildDetail(context),
-          Center(
-            child: FlatButton(
-              child: Text("View course."),
-              onPressed: () => _lanuchCourse(course.courseId),
-            ),
-          )
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildBanner(),
+              _buildMain(context),
+              _buildDetail(context),
+              Center(
+                child: FlatButton(
+                  child: Text("View course."),
+                  onPressed: () => _lanuchCourse(course.courseId),
+                ),
+              )
+            ],
+          ),
         ],
       ),
     );
